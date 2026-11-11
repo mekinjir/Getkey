@@ -25,22 +25,15 @@
 html { scroll-behavior: smooth; }
 body {
   font-family: 'Inter', -apple-system, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  min-height: 100vh;
-  overflow-x: hidden;
-  line-height: 1.6;
+  background: var(--bg); color: var(--text);
+  min-height: 100vh; overflow-x: hidden; line-height: 1.6;
 }
 body::before {
-  content: '';
-  position: fixed;
-  top: -30%; left: 50%;
-  transform: translateX(-50%);
+  content: ''; position: fixed;
+  top: -30%; left: 50%; transform: translateX(-50%);
   width: 800px; height: 800px;
   background: radial-gradient(circle, var(--accent-glow) 0%, transparent 65%);
-  filter: blur(80px);
-  z-index: -1;
-  pointer-events: none;
+  filter: blur(80px); z-index: -1; pointer-events: none;
 }
 .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 
@@ -62,8 +55,7 @@ nav {
 }
 .logo-dot {
   width: 10px; height: 10px; border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 16px var(--accent);
+  background: var(--accent); box-shadow: 0 0 16px var(--accent);
   animation: pulse 2.5s ease-in-out infinite;
 }
 @keyframes pulse {
@@ -89,8 +81,7 @@ nav {
 }
 .hero-badge .dot {
   width: 6px; height: 6px; border-radius: 50%;
-  background: var(--success);
-  box-shadow: 0 0 8px var(--success);
+  background: var(--success); box-shadow: 0 0 8px var(--success);
 }
 .hero h1 {
   font-size: clamp(2.2rem, 6vw, 3.6rem);
@@ -131,8 +122,7 @@ nav {
   border: 1px solid var(--border);
 }
 .btn-ghost:hover {
-  background: var(--bg-card-hover);
-  border-color: #35354a;
+  background: var(--bg-card-hover); border-color: #35354a;
 }
 
 /* KEY SECTION */
@@ -157,8 +147,7 @@ nav {
 }
 .key-card:hover { border-color: rgba(124, 92, 255, 0.4); }
 .key-card::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
   background: linear-gradient(90deg, transparent, var(--accent), transparent);
   opacity: 0.5;
 }
@@ -204,15 +193,9 @@ nav {
   white-space: nowrap;
   box-shadow: 0 4px 20px var(--accent-glow);
 }
-.copy-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 28px var(--accent-glow);
-}
+.copy-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 28px var(--accent-glow); }
 .copy-btn:active { transform: translateY(0) scale(0.98); }
-.copy-btn.copied {
-  background: var(--success);
-  box-shadow: 0 4px 20px rgba(52, 211, 153, 0.35);
-}
+.copy-btn.copied { background: var(--success); box-shadow: 0 4px 20px rgba(52, 211, 153, 0.35); }
 
 /* FEATURES */
 .features { padding: 24px 0 100px; }
@@ -227,8 +210,7 @@ nav {
 }
 .feature-card:hover {
   background: var(--bg-card-hover);
-  border-color: #35354a;
-  transform: translateY(-2px);
+  border-color: #35354a; transform: translateY(-2px);
 }
 .feature-icon {
   width: 40px; height: 40px; border-radius: 10px;
@@ -261,20 +243,16 @@ footer .logo { justify-content: center; margin-bottom: 12px; font-size: 1.1rem; 
   border-color: var(--accent); transform: translateY(-2px);
 }
 
-/* ===== CUSTOM TOAST ===== */
+/* TOAST */
 #toastWrap {
   position: fixed; bottom: 32px; left: 50%;
-  transform: translateX(-50%);
-  z-index: 2000;
+  transform: translateX(-50%); z-index: 4000;
   display: flex; flex-direction: column; gap: 10px;
   align-items: center; pointer-events: none;
 }
 .toast {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  color: var(--text);
-  padding: 12px 20px;
-  border-radius: 12px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  color: var(--text); padding: 12px 20px; border-radius: 12px;
   font-size: 0.88rem; font-weight: 500;
   display: flex; align-items: center; gap: 10px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
@@ -287,13 +265,11 @@ footer .logo { justify-content: center; margin-bottom: 12px; font-size: 1.1rem; 
 .toast.error { border-color: rgba(239, 68, 68, 0.5); color: var(--danger); }
 .toast.info { border-color: rgba(124, 92, 255, 0.5); color: var(--accent); }
 
-/* ===== CUSTOM CONFIRM MODAL ===== */
+/* CONFIRM MODAL */
 #confirmOverlay {
   display: none; position: fixed; inset: 0;
-  background: rgba(0,0,0,0.85);
-  backdrop-filter: blur(6px);
-  z-index: 3000; align-items: center; justify-content: center;
-  padding: 20px;
+  background: rgba(0,0,0,0.85); backdrop-filter: blur(6px);
+  z-index: 3500; align-items: center; justify-content: center; padding: 20px;
 }
 #confirmOverlay.show { display: flex; }
 .confirm-box {
@@ -313,7 +289,7 @@ footer .logo { justify-content: center; margin-bottom: 12px; font-size: 1.1rem; 
 }
 .confirm-box p {
   font-size: 0.88rem; color: var(--text-muted);
-  margin-bottom: 20px; line-height: 1.55;
+  margin-bottom: 20px; line-height: 1.55; white-space: pre-line;
 }
 .confirm-actions { display: flex; gap: 10px; }
 .confirm-actions button {
@@ -330,22 +306,20 @@ footer .logo { justify-content: center; margin-bottom: 12px; font-size: 1.1rem; 
 }
 .confirm-no:hover { color: var(--text); }
 
-/* ===== SECRET MODAL ===== */
-#secretModal {
+/* SHARED MODAL */
+.modal-overlay {
   display: none; position: fixed; inset: 0;
-  background: rgba(0,0,0,0.85);
-  backdrop-filter: blur(6px);
-  z-index: 2500; align-items: center; justify-content: center;
-  padding: 20px;
+  background: rgba(0,0,0,0.85); backdrop-filter: blur(6px);
+  z-index: 3000; align-items: center; justify-content: center; padding: 20px;
 }
-#secretModal.show { display: flex; }
-.secret-box {
+.modal-overlay.show { display: flex; }
+.modal-box {
   background: var(--bg-card); border: 1px solid var(--border);
   border-radius: 20px; padding: 28px;
-  max-width: 480px; width: 100%;
-  position: relative;
+  max-width: 480px; width: 100%; position: relative;
   box-shadow: 0 20px 60px rgba(0,0,0,0.6);
   animation: pop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  max-height: 90vh; overflow-y: auto;
 }
 .secret-close {
   position: absolute; top: 16px; right: 16px;
@@ -361,32 +335,30 @@ footer .logo { justify-content: center; margin-bottom: 12px; font-size: 1.1rem; 
 }
 .secret-header-icon {
   width: 36px; height: 36px; border-radius: 10px;
-  background: rgba(124, 92, 255, 0.15);
-  color: var(--accent);
+  background: rgba(124, 92, 255, 0.15); color: var(--accent);
   display: flex; align-items: center; justify-content: center;
 }
 .secret-header h3 {
   font-size: 1.05rem; font-weight: 700; letter-spacing: -0.01em;
 }
-.secret-box > p {
+.modal-box > p {
   color: var(--text-muted); font-size: 0.82rem; margin-bottom: 22px;
 }
 .field-label {
-  display: block;
-  font-size: 0.75rem; color: var(--text-muted);
+  display: block; font-size: 0.75rem; color: var(--text-muted);
   font-weight: 600; text-transform: uppercase;
   letter-spacing: 0.05em; margin-bottom: 6px;
 }
 .field-label i { margin-right: 6px; }
+.field-label .opt {
+  text-transform: none; font-weight: 400; color: #55556a; font-size: 0.72rem;
+}
 .field-input {
-  width: 100%; padding: 12px 14px;
-  border-radius: 10px;
+  width: 100%; padding: 12px 14px; border-radius: 10px;
   background: var(--bg); border: 1px solid var(--border);
-  color: var(--text);
-  font-family: 'JetBrains Mono', monospace;
+  color: var(--text); font-family: 'JetBrains Mono', monospace;
   font-size: 0.85rem; outline: none;
-  transition: border-color 0.2s;
-  margin-bottom: 16px;
+  transition: border-color 0.2s; margin-bottom: 16px;
 }
 .field-input:focus { border-color: var(--accent); }
 .secret-actions { display: flex; gap: 10px; margin-top: 6px; }
@@ -423,6 +395,25 @@ footer .logo { justify-content: center; margin-bottom: 12px; font-size: 1.1rem; 
   padding: 0; transition: color 0.2s;
 }
 .btn-clear-token:hover { color: var(--danger); }
+.result-box {
+  display: none; margin-top: 14px; padding: 14px;
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.result-box .result-label {
+  font-size: 0.75rem; color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;
+}
+.result-box .result-row { display: flex; gap: 8px; align-items: stretch; }
+.result-box .result-row .field-input { margin-bottom: 0; flex: 1; }
+.result-copy-btn {
+  padding: 0 16px; border-radius: 10px; border: none;
+  cursor: pointer; background: var(--accent); color: #fff;
+  font-weight: 600; font-family: inherit; font-size: 0.85rem;
+  display: flex; align-items: center; gap: 6px;
+  transition: all 0.2s; white-space: nowrap;
+}
+.result-copy-btn:hover { box-shadow: 0 4px 20px var(--accent-glow); }
 
 @media (max-width: 520px) {
   .key-row { flex-direction: column; }
@@ -471,9 +462,7 @@ footer .logo { justify-content: center; margin-bottom: 12px; font-size: 1.1rem; 
     <div class="key-card">
       <div class="key-card-header">
         <div class="key-card-title">
-          <div class="key-icon">
-            <i class="fa-solid fa-lock"></i>
-          </div>
+          <div class="key-icon"><i class="fa-solid fa-lock"></i></div>
           Meki Hub — Roblox Script
         </div>
         <span class="key-status"><i class="fa-solid fa-circle" style="font-size:0.5rem;margin-right:6px;"></i> Active</span>
@@ -494,7 +483,7 @@ footer .logo { justify-content: center; margin-bottom: 12px; font-size: 1.1rem; 
 <section class="features" id="features">
   <div class="container">
     <div class="section-label">Kenapa Meki Hub</div>
-    <h2 class="section-title">Fitur Script</h2>
+    <h2 class="section-title" id="featuresTrigger" style="cursor:pointer; user-select:none;">Fitur Script</h2>
     <p class="section-desc">Fitur lengkap dan stabil untuk menunjang permainan Anda.</p>
     <div class="features-grid">
       <div class="feature-card">
@@ -554,16 +543,15 @@ footer .logo { justify-content: center; margin-bottom: 12px; font-size: 1.1rem; 
   </div>
 </footer>
 
-<!-- ===== TOAST WRAP ===== -->
+<!-- ===== TOAST ===== -->
 <div id="toastWrap"></div>
 
 <!-- ===== SECRET EDITOR MODAL ===== -->
-<div id="secretModal">
-  <div class="secret-box">
+<div class="modal-overlay" id="secretModal">
+  <div class="modal-box">
     <button class="secret-close" onclick="closeSecret()" aria-label="Tutup">
       <i class="fa-solid fa-xmark"></i>
     </button>
-
     <div class="secret-header">
       <div class="secret-header-icon"><i class="fa-solid fa-lock"></i></div>
       <h3>Secret Editor</h3>
@@ -593,6 +581,54 @@ footer .logo { justify-content: center; margin-bottom: 12px; font-size: 1.1rem; 
   </div>
 </div>
 
+<!-- ===== SHORTLINK MODAL ===== -->
+<div class="modal-overlay" id="shortlinkModal">
+  <div class="modal-box">
+    <button class="secret-close" onclick="closeShortlink()" aria-label="Tutup">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="secret-header">
+      <div class="secret-header-icon"><i class="fa-solid fa-link"></i></div>
+      <h3>Shortlink Generator</h3>
+    </div>
+    <p>Perpendek link pakai API SafelinkU. Token hanya disimpan di browser.</p>
+
+    <label class="field-label"><i class="fa-solid fa-key"></i> SafelinkU Token</label>
+    <input id="slToken" type="password" class="field-input" placeholder="Token API SafelinkU" autocomplete="off" />
+
+    <label class="field-label"><i class="fa-solid fa-globe"></i> Link yang Mau Diperpendek</label>
+    <input id="slUrl" type="text" class="field-input" placeholder="https://example.com/link-panjang" autocomplete="off" />
+
+    <label class="field-label"><i class="fa-solid fa-tag"></i> Custom Alias <span class="opt">(opsional)</span></label>
+    <input id="slAlias" type="text" class="field-input" placeholder="meki-hub" autocomplete="off" />
+
+    <div class="secret-actions">
+      <button class="btn-save" id="slBtn" onclick="generateShortlink()">
+        <i class="fa-solid fa-wand-magic-sparkles"></i> Perpendek
+      </button>
+      <button class="btn-cancel" onclick="closeShortlink()">
+        <i class="fa-solid fa-xmark"></i> Batal
+      </button>
+    </div>
+
+    <div class="secret-status" id="slStatus"></div>
+
+    <div class="result-box" id="slResultBox">
+      <div class="result-label"><i class="fa-solid fa-circle-check" style="color:var(--success);"></i> Shortlink</div>
+      <div class="result-row">
+        <input id="slResult" type="text" readonly class="field-input" />
+        <button onclick="copyShortlinkResult()" id="slCopyBtn" class="result-copy-btn">
+          <i class="fa-regular fa-copy"></i> Copy
+        </button>
+      </div>
+    </div>
+
+    <button class="btn-clear-token" onclick="clearShortlinkToken()">
+      <i class="fa-solid fa-trash-can"></i> Hapus token tersimpan
+    </button>
+  </div>
+</div>
+
 <!-- ===== CUSTOM CONFIRM ===== -->
 <div id="confirmOverlay">
   <div class="confirm-box">
@@ -606,16 +642,16 @@ footer .logo { justify-content: center; margin-bottom: 12px; font-size: 1.1rem; 
 </div>
 
 <script>
-/* ===== KONFIG REPO ===== */
-const REPO_OWNER  = 'mekinjir';
-const REPO_NAME   = 'Getkey';
-const BRANCH      = 'main';
-const FILE_PATH   = 'index.html';
+/* ===== KONFIG ===== */
+const REPO_OWNER = 'mekinjir';
+const REPO_NAME  = 'Getkey';
+const BRANCH     = 'main';
+const FILE_PATH  = 'index.html';
 
 /* ===== YEAR ===== */
 document.getElementById('year').textContent = new Date().getFullYear();
 
-/* ===== TOAST (pengganti alert) ===== */
+/* ===== TOAST ===== */
 function showToast(msg, type = 'info', icon = null, duration = 2400) {
   const wrap = document.getElementById('toastWrap');
   const el = document.createElement('div');
@@ -631,17 +667,15 @@ function showToast(msg, type = 'info', icon = null, duration = 2400) {
   }, duration);
 }
 
-/* ===== CUSTOM CONFIRM (pengganti confirm) ===== */
+/* ===== CUSTOM CONFIRM ===== */
 function customConfirm(title, message) {
   return new Promise(resolve => {
     const overlay = document.getElementById('confirmOverlay');
     document.getElementById('confirmTitle').textContent = title;
     document.getElementById('confirmMessage').textContent = message;
     overlay.classList.add('show');
-
     const yesBtn = document.getElementById('confirmYes');
     const noBtn  = document.getElementById('confirmNo');
-
     const done = (val) => {
       overlay.classList.remove('show');
       yesBtn.removeEventListener('click', yesFn);
@@ -661,27 +695,20 @@ function copyKey() {
   const btn = document.getElementById('copyBtn');
   const label = document.getElementById('copyLabel');
   const key = input.value;
-
   if (navigator.clipboard && window.isSecureContext) {
     navigator.clipboard.writeText(key).then(onCopied).catch(fallbackCopy);
   } else {
     fallbackCopy();
   }
-
   function fallbackCopy() {
     input.removeAttribute('readonly');
     input.select();
     input.setSelectionRange(0, 99999);
-    try {
-      document.execCommand('copy');
-      onCopied();
-    } catch (e) {
-      showToast('Gagal menyalin. Salin manual: ' + key, 'error');
-    }
+    try { document.execCommand('copy'); onCopied(); }
+    catch (e) { showToast('Gagal menyalin.', 'error'); }
     input.setAttribute('readonly', true);
     window.getSelection().removeAllRanges();
   }
-
   function onCopied() {
     btn.classList.add('copied');
     label.textContent = 'Tersalin!';
@@ -693,48 +720,53 @@ function copyKey() {
   }
 }
 
-/* ===== SECRET TRIGGER (klik 3x logo) ===== */
-let clickCount = 0, clickTimer;
+/* ===== TRIGGER 1: 3x logo → Secret Editor ===== */
+let logoClicks = 0, logoTimer;
 document.getElementById('logoTrigger').addEventListener('click', () => {
-  clickCount++;
-  clearTimeout(clickTimer);
-  clickTimer = setTimeout(() => clickCount = 0, 800);
-  if (clickCount === 3) {
-    clickCount = 0;
+  logoClicks++;
+  clearTimeout(logoTimer);
+  logoTimer = setTimeout(() => logoClicks = 0, 800);
+  if (logoClicks === 3) {
+    logoClicks = 0;
     openSecret();
   }
 });
 
+/* ===== TRIGGER 2: 3x "Fitur Script" → Shortlink Generator ===== */
+let featClicks = 0, featTimer;
+document.getElementById('featuresTrigger').addEventListener('click', () => {
+  featClicks++;
+  clearTimeout(featTimer);
+  featTimer = setTimeout(() => featClicks = 0, 800);
+  if (featClicks === 3) {
+    featClicks = 0;
+    openShortlink();
+  }
+});
+
+/* ===== SECRET EDITOR ===== */
 function openSecret() {
   document.getElementById('secretModal').classList.add('show');
   document.getElementById('ghToken').value = localStorage.getItem('gh_token') || '';
   document.getElementById('newKey').value = document.getElementById('keyInput').value;
   setStatus('', '');
 }
-
 function closeSecret() {
   document.getElementById('secretModal').classList.remove('show');
 }
-
 function setStatus(msg, type) {
   const el = document.getElementById('secretStatus');
   el.className = 'secret-status' + (type ? ' ' + type : '');
   el.innerHTML = msg;
 }
-
-/* ===== HAPUS TOKEN ===== */
 async function clearToken() {
-  const ok = await customConfirm(
-    'Hapus Token',
-    'Token GitHub akan dihapus dari browser ini. Anda perlu memasukkannya lagi nanti.'
-  );
+  const ok = await customConfirm('Hapus Token', 'Token GitHub akan dihapus dari browser ini.');
   if (!ok) return;
   localStorage.removeItem('gh_token');
   document.getElementById('ghToken').value = '';
-  showToast('Token dihapus dari browser.', 'success');
+  showToast('Token dihapus.', 'success');
 }
 
-/* ===== SIMPAN KEY → COMMIT index.html ===== */
 async function saveKeyToGitHub() {
   const token  = document.getElementById('ghToken').value.trim();
   const newKey = document.getElementById('newKey').value.trim();
@@ -752,11 +784,7 @@ async function saveKeyToGitHub() {
     setStatus('<i class="fa-solid fa-circle-info"></i> Key sama dengan yang sekarang.', 'err');
     return;
   }
-
-  const ok = await customConfirm(
-    'Commit ke GitHub',
-    `Key akan diganti menjadi:\n\n${newKey}\n\nLanjut commit ke repo?`
-  );
+  const ok = await customConfirm('Commit ke GitHub', `Key akan diganti menjadi:\n\n${newKey}\n\nLanjut commit?`);
   if (!ok) return;
 
   btn.disabled = true;
@@ -769,7 +797,6 @@ async function saveKeyToGitHub() {
       'Accept': 'application/vnd.github+json'
     };
 
-    /* 1. GET file */
     const getRes = await fetch(`${apiUrl}?ref=${BRANCH}&t=${Date.now()}`, { headers });
     if (!getRes.ok) {
       if (getRes.status === 401) throw new Error('Token salah atau expired.');
@@ -777,22 +804,12 @@ async function saveKeyToGitHub() {
       throw new Error(`Gagal ambil file (${getRes.status})`);
     }
     const fileData = await getRes.json();
-    const sha = fileData.sha;
-
-    /* 2. Decode base64 (handle UTF-8) */
     const rawContent = decodeURIComponent(escape(atob(fileData.content.replace(/\s/g, ''))));
-
-    /* 3. Replace key */
     const regex = /(<input[^>]*id="keyInput"[^>]*value=")([^"]*)(")/;
-    if (!regex.test(rawContent)) {
-      throw new Error('Elemen #keyInput tidak ditemukan di file.');
-    }
+    if (!regex.test(rawContent)) throw new Error('Elemen #keyInput tidak ditemukan.');
     const updated = rawContent.replace(regex, `$1${newKey}$3`);
-
-    /* 4. Encode base64 (handle UTF-8) */
     const encoded = btoa(unescape(encodeURIComponent(updated)));
 
-    /* 5. PUT commit */
     setStatus('<i class="fa-solid fa-spinner fa-spin"></i> Commit ke GitHub...', 'loading');
     const putRes = await fetch(apiUrl, {
       method: 'PUT',
@@ -800,27 +817,131 @@ async function saveKeyToGitHub() {
       body: JSON.stringify({
         message: `Update key: ${newKey}`,
         content: encoded,
-        sha: sha,
+        sha: fileData.sha,
         branch: BRANCH
       })
     });
-
     if (!putRes.ok) {
       const err = await putRes.json().catch(() => ({}));
       throw new Error(err.message || `Commit gagal (${putRes.status})`);
     }
 
-    /* 6. Sukses */
     localStorage.setItem('gh_token', token);
     document.getElementById('keyInput').value = newKey;
     setStatus('<i class="fa-solid fa-circle-check"></i> Berhasil! Key sudah di-commit.', 'ok');
     showToast('Key berhasil diupdate!', 'success');
     setTimeout(closeSecret, 1600);
-
   } catch (e) {
     setStatus(`<i class="fa-solid fa-circle-xmark"></i> ${e.message}`, 'err');
   } finally {
     btn.disabled = false;
+  }
+}
+
+/* ===== SHORTLINK GENERATOR ===== */
+function openShortlink() {
+  document.getElementById('shortlinkModal').classList.add('show');
+  document.getElementById('slToken').value = localStorage.getItem('safelink_token') || '';
+  document.getElementById('slResultBox').style.display = 'none';
+  const st = document.getElementById('slStatus');
+  st.className = 'secret-status';
+  st.innerHTML = '';
+}
+function closeShortlink() {
+  document.getElementById('shortlinkModal').classList.remove('show');
+}
+async function clearShortlinkToken() {
+  const ok = await customConfirm('Hapus Token', 'Token SafelinkU akan dihapus dari browser.');
+  if (!ok) return;
+  localStorage.removeItem('safelink_token');
+  document.getElementById('slToken').value = '';
+  showToast('Token dihapus.', 'success');
+}
+
+async function generateShortlink() {
+  const token = document.getElementById('slToken').value.trim();
+  const url   = document.getElementById('slUrl').value.trim();
+  const alias = document.getElementById('slAlias').value.trim();
+  const status = document.getElementById('slStatus');
+  const btn = document.getElementById('slBtn');
+
+  if (!token) {
+    status.className = 'secret-status err';
+    status.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> Token SafelinkU wajib diisi.';
+    return;
+  }
+  if (!url) {
+    status.className = 'secret-status err';
+    status.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> Link wajib diisi.';
+    return;
+  }
+  if (!/^https?:\/\/.+/i.test(url)) {
+    status.className = 'secret-status err';
+    status.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> Link harus diawali http:// atau https://';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.style.opacity = '0.6';
+  status.className = 'secret-status loading';
+  status.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Memperpendek link...';
+
+  try {
+    const body = { url };
+    if (alias) body.alias = alias;
+
+    const res = await fetch('https://safelinku.com/api/v1/links', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(body)
+    });
+
+    const data = await res.json().catch(() => ({}));
+
+    if (!res.ok) {
+      if (res.status === 401) throw new Error('Token SafelinkU tidak valid');
+      if (res.status === 429) throw new Error('Rate limit tercapai (60/menit)');
+      if (res.status === 400) throw new Error(data.message || 'Link / alias tidak valid');
+      throw new Error(data.message || `Error ${res.status}`);
+    }
+
+    const shortUrl = data.url || data.shortUrl || data.short_url || data.result;
+    if (!shortUrl) throw new Error('Respons API tidak mengandung shortlink');
+
+    localStorage.setItem('safelink_token', token);
+    document.getElementById('slResult').value = shortUrl;
+    document.getElementById('slResultBox').style.display = 'block';
+    status.className = 'secret-status ok';
+    status.innerHTML = '<i class="fa-solid fa-circle-check"></i> Shortlink berhasil dibuat!';
+    showToast('Shortlink berhasil dibuat!', 'success');
+  } catch (e) {
+    status.className = 'secret-status err';
+    status.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> ${e.message}`;
+  } finally {
+    btn.disabled = false;
+    btn.style.opacity = '1';
+  }
+}
+
+function copyShortlinkResult() {
+  const input = document.getElementById('slResult');
+  if (!input.value) return;
+  const done = () => {
+    showToast('Shortlink disalin!', 'success');
+    const btn = document.getElementById('slCopyBtn');
+    btn.innerHTML = '<i class="fa-solid fa-check"></i> Tersalin';
+    setTimeout(() => btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy', 1500);
+  };
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(input.value).then(done).catch(() => {
+      input.select(); document.execCommand('copy'); done();
+    });
+  } else {
+    input.select(); document.execCommand('copy'); done();
   }
 }
 </script>
